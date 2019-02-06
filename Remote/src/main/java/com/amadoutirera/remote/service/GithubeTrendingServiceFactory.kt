@@ -40,4 +40,5 @@ class GithubeTrendingServiceFactory {
         }
         return logging
     }
+
 }

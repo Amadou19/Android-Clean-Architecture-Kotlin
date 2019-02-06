@@ -5,6 +5,6 @@ class Project(val id: String,
               val fullName: String,
               val startCount: String,
               val dateCreated: String,
-              val owanerName: String,
-              val owanerAvatar: String,
+              val ownerName: String,
+              val ownerAvatar: String,
               val isBookmarked: Boolean)

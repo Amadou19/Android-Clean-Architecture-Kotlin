@@ -15,7 +15,7 @@ class ProjectsRemoteImp @Inject constructor(private val service: GithubTrendingS
 
     override fun getProjects(): Observable<List<ProjectEntity>> {
         return  service.searchRepository("language:kotlin", "star", "desc")
-            .map { it ->
+            .map {
                 it.items.map {
                    mapper.mapFromModel(it)
                }

@@ -21,7 +21,7 @@ interface ProjectsCache {
 
     fun arProjectCached():Single<Boolean>
 
-    fun setLastCacheTime(LastCache: Long): Completable
+    fun setLastCacheTime(lastCache: Long): Completable
 
     fun iseProjectsCacheExpired(): Single<Boolean>
 

@@ -1,8 +1,8 @@
 package com.amadoutirera.mobile_ui
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import kotlinx.android.synthetic.main.activity_browse.*
 
@@ -13,10 +13,13 @@ class BrowseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_browse)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        setupRecyclerView()
+    }
+
+
+    fun setupRecyclerView(){
+
+        recyclerView_projects.layoutManager = LinearLayoutManager(this)
     }
 
 }
