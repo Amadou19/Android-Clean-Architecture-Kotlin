@@ -60,7 +60,7 @@ dependencies {
 
     implementation project(':Domain')
 
-    implementation presentationDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation presentationDependencies.javaxInject
     implementation presentationDependencies.rxKotlin
     implementation presentationDependencies.archRuntime

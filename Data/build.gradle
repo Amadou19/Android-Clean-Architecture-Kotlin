@@ -9,13 +9,13 @@ dependencies {
     implementation project(':Domain')
 
     implementation dataDependencies.javaxAnnotation
-    implementation dataDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation dataDependencies.javaxInject
     implementation dataDependencies.rxJava
     //implementation dataDependencies.rxKotlin
 
     testImplementation dataTestDependencies.junit
-    testImplementation dataTestDependencies.kotlinJUnit
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.3.20"
     testImplementation dataTestDependencies.mockito
     testImplementation dataTestDependencies.assertj
 }

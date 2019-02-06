@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         minSdkVersion globalConfigurations["androidMinSdkVersion"]
-        targetSdkVersion globalConfigurations["androidTargetSdkVersion"]
+        //targetSdkVersion globalConfigurations["androidTargetSdkVersion"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -23,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            matchingFallbacks = ['']
         }
     }
 
@@ -38,9 +39,9 @@ dependencies {
     implementation project(':Cache')
     //implementation project(':Domain')
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-alpha3'
     implementation mobileUiDependencies.javaxAnnotation
-    implementation mobileUiDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation mobileUiDependencies.javaxInject
     implementation mobileUiDependencies.rxKotlin
     implementation mobileUiDependencies.androidAnnotations
@@ -49,7 +50,7 @@ dependencies {
     implementation mobileUiDependencies.appCompatV7
     implementation mobileUiDependencies.supportRecyclerView
     implementation mobileUiDependencies.supportDesign
-    implementation mobileUiDependencies.timber
+    implementation "com.jakewharton.timber:timber:${timberVersion}"
     implementation mobileUiDependencies.rxAndroid
     implementation mobileUiDependencies.glide
     implementation mobileUiDependencies.dagger
@@ -57,12 +58,12 @@ dependencies {
     implementation presentationDependencies.archRuntime
     implementation presentationDependencies.archExtensions
     implementation 'android.arch.persistence.room:rxjava2:1.1.1'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+    implementation 'com.google.android.material:material:1.1.0-alpha03'
     kapt presentationDependencies.archCompiler
-    testImplementation mobileUiTestDependencies.kotlinJUnit
-    kapt mobileUiDependencies.daggerCompiler
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.3.21"
+    kapt "com.google.dagger:dagger-compiler:${daggerVersion}"
     kapt mobileUiDependencies.daggerProcessor
     compileOnly mobileUiDependencies.glassfishAnnotation
     // Instrumentation test dependencies
@@ -93,6 +94,6 @@ dependencies {
     }
     kaptTest mobileUiDependencies.daggerCompiler
     kaptAndroidTest mobileUiDependencies.daggerCompiler
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
 
 }

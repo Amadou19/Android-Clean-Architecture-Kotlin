@@ -11,7 +11,7 @@ dependencies {
     implementation remoteDependencies.gson
     implementation remoteDependencies.rxKotlin
     implementation remoteDependencies.rxJava
-    implementation remoteDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation remoteDependencies.javaxAnnotation
     implementation remoteDependencies.javaxInject
     implementation remoteDependencies.androidAnnotations
@@ -24,7 +24,7 @@ dependencies {
 
 
     implementation remoteTestDependencies.junit
-    implementation remoteTestDependencies.kotlinJUnit
+    implementation "org.jetbrains.kotlin:kotlin-test-junit:1.3.20"
     implementation remoteTestDependencies.assertj
     implementation remoteTestDependencies.mockito
     implementation remoteTestDependencies.supportRunner

@@ -10,7 +10,7 @@ dependencies {
     def domainDependencies = rootProject.ext.domainDependencies
     def domainTestDependencies = rootProject.ext.domainTestDependencies
 
-    implementation domainDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation domainDependencies.javaxAnnotation
     implementation domainDependencies.javaxInject
     implementation domainDependencies.rxKotlin
@@ -18,7 +18,7 @@ dependencies {
 
     testImplementation domainTestDependencies.junit
     testImplementation domainTestDependencies.mockito
-    testImplementation domainTestDependencies.assertj
+    testImplementation "org.assertj:assertj-core:3.11.1"
 
 }
 

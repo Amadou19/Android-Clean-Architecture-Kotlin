@@ -6,8 +6,8 @@ android {
 
     def globalConfiguration = rootProject.extensions.getByName("ext")
 
-    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
-    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
 
     defaultConfig {
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
@@ -33,7 +33,7 @@ dependencies {
 
     implementation project(':Data')
 
-    implementation cacheDependencies.kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20"
     implementation cacheDependencies.javaxInject
     implementation cacheDependencies.rxKotlin
     implementation cacheDependencies.roomRuntime
@@ -41,12 +41,12 @@ dependencies {
     kapt cacheDependencies.roomCompiler
 
     testImplementation cacheTestDependencies.junit
-    testImplementation cacheTestDependencies.kotlinJUnit
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:1.3.20"
     testImplementation cacheTestDependencies.mockito
     testImplementation cacheTestDependencies.assertj
     testImplementation cacheTestDependencies.robolectric
     testImplementation cacheTestDependencies.archTesting
     testImplementation cacheTestDependencies.roomTesting
     androidTestImplementation 'com.android.support:support-annotations:28.0.'
-    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'junit:junit:4.13-beta-2'
 }
