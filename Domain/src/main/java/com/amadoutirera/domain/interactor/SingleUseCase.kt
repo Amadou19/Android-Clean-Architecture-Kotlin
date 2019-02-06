@@ -12,13 +12,10 @@ abstract class SingleUseCase<T,in params>constructor(private val postExecutionTh
 
 
 
-
-    /*----------        ------------*/
     protected abstract fun buildUseCaseSingle(params: params? = null): Observable<T>
 
 
 
-    /*----------        ------------*/
     open fun execute(observer: DisposableObserver<T>, params: params? = null){
         val single = this.buildUseCaseSingle(params)
             .subscribeOn(Schedulers.io())
@@ -27,15 +24,15 @@ abstract class SingleUseCase<T,in params>constructor(private val postExecutionTh
     }
 
 
-    /*----------        ------------*/
     private fun addDisposable(disposable: Disposable){
         disposables.add(disposable)
     }
 
 
-    /*----------        ------------*/
     fun disposse(){
         if(!disposables.isDisposed()) disposables.dispose()
     }
+
+
 
 }

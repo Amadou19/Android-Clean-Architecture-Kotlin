@@ -13,7 +13,6 @@ open class GetBookmarkedProjects @Inject constructor(private val projectsReposit
 
 
 
-    /*-------------     -------------*/
     public override fun buildUseCaseObservable(params: Nothing?): Observable<List<Project>> {
         return projectsRepository.getBookmarkProjects()
     }

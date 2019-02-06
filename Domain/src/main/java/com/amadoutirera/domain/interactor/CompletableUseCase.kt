@@ -17,13 +17,11 @@ abstract class CompletableUseCase<in params>constructor(private val postExecutio
 
 
 
-    /*----------        ------------*/
     protected abstract fun buildUseCasCompletable(params: params? = null): Completable
 
 
 
 
-    /*----------        ------------*/
     open fun execute(observer: DisposableCompletableObserver, params: params? = null){
         val completable = this.buildUseCasCompletable(params)
             .subscribeOn(Schedulers.io())

@@ -12,7 +12,6 @@ open class UnBookMarkProject @Inject constructor(private val projectsRepository:
 
 
 
-    /*--------           -----------*/
      public override fun buildUseCasCompletable(params: Params?): Completable {
         if (params == null) throw IllegalArgumentException("Params can't be null")
         return projectsRepository.unBokmarkProject(params.projectId)
